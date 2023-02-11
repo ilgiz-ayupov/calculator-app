@@ -1,3 +1,100 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Variables */
+body[data-theme="1"] {
+  --main-bg: hsl(222, 26%, 31%);
+  --display-bg: hsl(224, 36%, 15%);
+  --keypad-bg: hsl(223, 31%, 20%);
+
+  --key-bg: hsl(30, 25%, 89%);
+  --key-text: hsl(222, 11%, 30%);
+  --key-shadow: hsl(28, 16%, 65%);
+
+  --key-action-bg: hsl(224, 21%, 50%);
+  --key-action-text: hsl(0, 0%, 100%);
+  --key-action-shadow: hsl(224, 28%, 35%);
+
+  --key-result-bg: hsl(6, 63%, 50%);
+  --key-result-text: hsl(0, 0%, 100%);
+  --key-result-shadow: hsl(6, 70%, 34%);
+
+  --header-text: hsl(0, 0%, 100%);
+  --display-text: hsl(0, 0%, 100%);
+}
+
+body[data-theme="2"] {
+  --main-bg: hsl(0, 0%, 90%);
+  --display-bg: hsl(0, 0%, 93%);
+  --keypad-bg: hsl(0, 5%, 81%);
+
+  --key-bg: hsl(45, 7%, 89%);
+  --key-text: hsl(60, 10%, 17%);
+  --key-shadow: hsl(35, 11%, 61%);
+
+  --key-action-bg: hsl(185, 42%, 37%);
+  --key-action-text: hsl(0, 0%, 100%);
+  --key-action-shadow: hsl(185, 58%, 25%);
+
+  --key-result-bg: hsl(25, 98%, 40%);
+  --key-result-text: hsl(0, 0%, 100%);
+  --key-result-shadow: hsl(25, 99%, 27%);
+
+  --header-text: hsl(60, 10%, 19%);
+  --display-text: hsl(60, 10%, 19%);
+}
+
+body[data-theme="3"] {
+  --main-bg: hsl(268, 75%, 9%);
+  --display-bg: hsl(268, 71%, 12%);
+  --keypad-bg: hsl(268, 71%, 12%);
+
+  --key-bg: hsl(268, 47%, 21%);
+  --key-text: hsl(52, 100%, 62%);
+  --key-shadow: hsl(285, 91%, 52%);
+
+  --key-action-bg: hsl(281, 89%, 26%);
+  --key-action-text: hsl(0, 0%, 100%);
+  --key-action-shadow: hsl(290, 70%, 36%);
+
+  --key-result-bg: hsl(176, 100%, 44%);
+  --key-result-text: hsl(268, 75%, 9%);
+  --key-result-shadow: hsl(177, 92%, 70%);
+
+  --header-text: hsl(52, 100%, 62%);
+  --display-text: hsl(52, 100%, 62%);
+}
+
+/* Styles */
+body {
+  @apply bg-[var(--main-bg)] transition-colors;
+}
+
+.header {
+  @apply mb-5 text-[var(--header-text)] transition-colors;
+}
+
+.display {
+  @apply mb-5 h-20 w-full overflow-hidden rounded-lg;
+}
+.display-input {
+  @apply h-full w-full border-0 bg-[var(--display-bg)] p-5 text-right text-4xl text-[var(--display-text)] outline-none transition-colors;
+}
+
+.keypad {
+  @apply h-72 w-full rounded-lg bg-[var(--keypad-bg)] p-5 transition-colors;
+}
+
+.key {
+  @apply flex items-center justify-center rounded-lg text-lg;
+}
+.key-base {
+  @apply bg-[var(--key-bg)] text-[var(--key-text)] shadow-[0_4px_0px_var(--key-shadow)] transition-all active:translate-y-1 active:shadow-none;
+}
+.key-action {
+  @apply bg-[var(--key-action-bg)] text-[var(--key-action-text)] shadow-[0_4px_0px_var(--key-action-shadow)] transition-all active:translate-y-1 active:shadow-none;
+}
+.key-result {
+  @apply bg-[var(--key-result-bg)] text-[var(--key-result-text)] shadow-[0_4px_0px_var(--key-result-shadow)] transition-all active:translate-y-1 active:shadow-none;
+}
