@@ -48,14 +48,14 @@ const Keyboard: React.FC = () => {
     <div className="keypad">
       <ul className="grid h-full grid-rows-5 gap-y-5">
         <li className="grid grid-cols-4 gap-x-5">
-          <Key
-            onClick={() => numberClickHandler("8")}
-            text="8"
+        <Key
+            onClick={() => numberClickHandler("7")}
+            text="7"
             variant="base"
           />
           <Key
-            onClick={() => numberClickHandler("7")}
-            text="7"
+            onClick={() => numberClickHandler("8")}
+            text="8"
             variant="base"
           />
           <Key
@@ -95,13 +95,13 @@ const Keyboard: React.FC = () => {
 
         <li className="grid grid-cols-4 gap-x-5">
           <Key
-            onClick={() => numberClickHandler("2")}
-            text="2"
+            onClick={() => numberClickHandler("1")}
+            text="1"
             variant="base"
           />
           <Key
-            onClick={() => numberClickHandler("1")}
-            text="1"
+            onClick={() => numberClickHandler("2")}
+            text="2"
             variant="base"
           />
           <Key
